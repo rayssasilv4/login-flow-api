@@ -1,4 +1,4 @@
-package controller;
+package com.login.flow.api.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Usuario;
-import repository.UsuarioRepository;
+import com.login.flow.api.repository.UsuarioRepository;
+
+import com.login.flow.api.model.Usuario;
 
 @RestController
 @RequestMapping(value = "/usuarios")
@@ -36,6 +37,11 @@ public class UsuarioController {
     @GetMapping(value = "/{id}")
     public Optional<Usuario> obterUsuarioPeloId(@PathVariable(value = "id") Integer id) {
         return usuarioRepository.findById(id);
+    }
+
+    @GetMapping(value = "/email/{email}")
+    public Optional<Usuario> obterUsuarioPeloEmail(@PathVariable(value = "email") String email) {
+        return usuarioRepository.findByEmail(email);
     }
 
     @DeleteMapping(value = "/{id}")
