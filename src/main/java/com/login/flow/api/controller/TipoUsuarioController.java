@@ -1,4 +1,4 @@
-package controller;
+package com.login.flow.api.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.TipoUsuario;
-import repository.TipoUsuarioRepository;
+import com.login.flow.api.repository.TipoUsuarioRepository;
+
+import com.login.flow.api.model.TipoUsuario;
 
 @RestController
 @RequestMapping(value = "/TiposUsuario")
